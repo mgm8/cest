@@ -1,7 +1,7 @@
 /*
  * cdpu.h
  * 
- * Copyright (C) 2018, Gabriel Mariano Marcelino <gabriel.mm8@gmail.comk>
+ * Copyright (C) 2020, Gabriel Mariano Marcelino <gabriel.mm8@gmail.com>
  * 
  * This program is free software: you can redistribute it
  * and/or modify it under the terms of the GNU General Public License
@@ -37,7 +37,6 @@
 #include <stdint.h>
 #include <cmath>
 
-//#include <structs/centroid.hpp>
 #include "centroid.hpp"
 
 #define DISTANCE_THRESHOLD                  5
