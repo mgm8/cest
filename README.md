@@ -1,4 +1,4 @@
-# Centroiding Algorithm Simulation
+# CEST - Centroid Extractor for Star Trackers
 
 ## Dependencies
 
