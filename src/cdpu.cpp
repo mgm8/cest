@@ -31,7 +31,7 @@
  * \{
  */
 
-#include "cdpu.h"
+#include <cest/cdpu.h>
 
 using namespace st;
 

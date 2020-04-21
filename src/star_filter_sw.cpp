@@ -31,7 +31,7 @@
  * \{
  */
 
-#include "star_filter_sw.h"
+#include <cest/star_filter_sw.h>
 
 using namespace std;
 using namespace cv;

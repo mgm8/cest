@@ -35,8 +35,8 @@
 #include <algorithm>
 #include <memory>
 
-#include "star_filter_hw.h"
-#include "csv.hpp"
+#include <cest/star_filter_hw.h>
+#include <cest/csv.hpp>
 
 using namespace std;
 using namespace cv;
@@ -87,7 +87,7 @@ void StarFilterHW::SetThreshold(uint8_t val)
 
 void StarFilterHW::RunSimulation(Mat img)
 {
-    imwrite(STAR_FILTER_HW_BUFFER_IMG, img, vector<int>(CV_IMWRITE_PXM_BINARY));
+    imwrite(STAR_FILTER_HW_BUFFER_IMG, img, vector<int>(IMWRITE_PXM_BINARY));
 
     string ghdl_cmd = "make";
 

@@ -33,8 +33,8 @@
 
 #include <algorithm>
 
-#include "centroider.h"
-#include "csv.hpp"
+#include <cest/centroider.h>
+#include <cest/csv.hpp>
 
 using namespace std;
 using namespace st;
@@ -136,7 +136,7 @@ Mat Centroider::PrintCentroids(Mat img, vector<Centroid> centroids, bool print_i
 
     if (img.channels() == 1)
     {
-        cvtColor(img_res, img_res, CV_GRAY2BGR);
+        cvtColor(img_res, img_res, COLOR_GRAY2BGR);
     }
 
     for(unsigned int i=0; i<centroids.size(); i++)
