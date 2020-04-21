@@ -3,18 +3,20 @@
  * 
  * Copyright (C) 2020, Gabriel Mariano Marcelino <gabriel.mm8@gmail.com>
  * 
- * This program is free software: you can redistribute it
+ * This file is part of CEST library.
+ * 
+ * CEST library is free software: you can redistribute it
  * and/or modify it under the terms of the GNU General Public License
  * as published by the Free Software Foundation, either version 3 of the
  * License, or (at your option) any later version.
  * 
- * This program is distributed in the hope that it will be
+ * CEST library is distributed in the hope that it will be
  * useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  * 
  * You should have received a copy of the GNU General Public License
- * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ * along with CEST library. If not, see <http://www.gnu.org/licenses/>.
  * 
  */
 
@@ -23,11 +25,12 @@
  * 
  * \author Gabriel Mariano Marcelino <gabriel.mm8@gmail.com>
  * 
- * \version 1.0
+ * \version 0.1.0
  * 
  * \date 05/03/2018
  * 
  * \defgroup cdpu CDPU
+ * \ingroup cest
  * \{
  */
 
@@ -86,8 +89,11 @@ class CDPU
          * \brief Updates the centroid parameters.
          *
          * \param[in] x_new is the x position of the new pixel of a star.
+         *
          * \param[in] y_new is the y position of the new pixel of a star.
+         *
          * \param[in] color_new is the color of the new pixel of a star.
+         *
          * \param[in] gain is the Kalman Filter gain factor.
          *
          * \return None.
@@ -98,7 +104,9 @@ class CDPU
          * \brief Sets the values of the centroid.
          *
          * \param[in] x_new is the new x position reference.
+         *
          * \param[in] y_new is the new y position reference
+         *
          * \param[in] color_new is the new color (8-bit) value reference.
          *
          * \return None.
@@ -116,6 +124,7 @@ class CDPU
          * \brief Calculates the distance from the centroid to a given point.
          *
          * \param[in] x_comp is the x-axis position of a point.
+         *
          * \param[in] y_comp is the y-axis position of a point.
          *
          * \return The distance in pixels.

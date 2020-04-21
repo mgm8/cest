@@ -1,35 +1,36 @@
 /*
  * csv.hpp
  * 
- * Copyright (C) 2018, Gabriel Mariano Marcelino <gabriel.mm8@gmail.com>
+ * Copyright (C) 2020, Gabriel Mariano Marcelino <gabriel.mm8@gmail.com>
  * 
- * This file is part of CSV-Lib.
+ * This file is part of CEST library.
  * 
- * CSV-Lib is free software: you can redistribute it and/or modify
+ * CEST library is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Lesser General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  * 
- * CSV-Lib is distributed in the hope that it will be useful,
+ * CEST library is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Lesser General Public License for more details.
  * 
  * You should have received a copy of the GNU Lesser General Public License
- * along with CSV-Lib. If not, see <http://www.gnu.org/licenses/>.
+ * along with CEST library. If not, see <http://www.gnu.org/licenses/>.
  * 
  */
 
 /**
- * \brief CSV library main class.
+ * \brief CSV parser class.
  * 
  * \author Gabriel Mariano Marcelino <gabriel.mm8@gmail.com>
  * 
- * \version 1.0
+ * \version 0.1.0
  * 
  * \date 28/04/2018
  * 
  * \defgroup csv CSV
+ * \ingroup cest
  * \{
  */
 
@@ -50,8 +51,11 @@ template <class TCell>
 class CSV
 {
     private:
+
         std::vector<std::vector<TCell> > cells;     /**< CSV table buffer. */
+
     public:
+
         /**
          * \brief Class constructor without initiliazation.
          *
@@ -66,6 +70,7 @@ class CSV
          * \brief Class constructor with table's size initialization.
          *
          * \param[in] cols is the number of columns of the CSV table.
+         *
          * \param[in] rows is the number of rows of the CSV table.
          *
          * \return None.
@@ -241,6 +246,7 @@ class CSV
          * \brief Reads a cell from the CSV table.
          *
          * \param[in] col is the column of the cell.
+         *
          * \param[in] row is the row of the cell.
          *
          * \return The given cell content.
@@ -266,7 +272,9 @@ class CSV
          * \brief Writes to a cell from the CSV table.
          *
          * \param[in] col is the columns of the cell.
+         *
          * \param[in] row is the row of the cell.
+         *
          * \parma[in] val is the data to write into the cell.
          *
          * \return None.
@@ -347,6 +355,7 @@ class CSV
          * \brief Writes data to a column from the CSV table.
          *
          * \parma[in] pos is the column number to write.
+         *
          * \param[in] col is the column data to write.
          *
          * \return None.
@@ -375,6 +384,7 @@ class CSV
          * \brief Writes data to a row from the CSV table.
          *
          * \param[in] pos is the row number to write.
+         *
          * \param[in] row is the row data to write.
          *
          * \return None.
@@ -427,6 +437,7 @@ class CSV
          * \brief cout overload.
          *
          * \param[in] os is the ostream object.
+         *
          * \param[in] csv is the CSV object.
          *
          * \return An ostream object.
