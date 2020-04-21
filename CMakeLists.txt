@@ -6,15 +6,18 @@ if(" ${CMAKE_SOURCE_DIR}" STREQUAL " ${CMAKE_BINARY_DIR}")
 endif()
 
 set(CMAKE_CXX_STANDARD 11)
-project(centroiding_sim)
-find_package(OpenCV 3.0.0 REQUIRED)
+project(cest)
 
-add_executable(csim ${CMAKE_SOURCE_DIR}/src/main.cpp)
-target_link_libraries(csim ${OpenCV_LIBS})
-target_link_libraries(csim ${CMAKE_SOURCE_DIR}/src/cdpu.cpp)
-target_link_libraries(csim ${CMAKE_SOURCE_DIR}/src/centroider.cpp)
-target_link_libraries(csim ${CMAKE_SOURCE_DIR}/src/star_filter.cpp)
-target_link_libraries(csim ${CMAKE_SOURCE_DIR}/src/star_filter_sw.cpp)
-target_link_libraries(csim ${CMAKE_SOURCE_DIR}/src/star_filter_hw.cpp)
+find_package(OpenCV 4.0.0 REQUIRED)
 
-file(COPY ${CMAKE_SOURCE_DIR}/vhdl DESTINATION ${CMAKE_BINARY_DIR})
+include_directories(${OpenCV_INCLUDE_DIRS})
+include_directories(${CMAKE_SOURCE_DIR}/include)
+
+add_library(cest STATIC ${CMAKE_SOURCE_DIR}/src/cdpu.cpp
+                        ${CMAKE_SOURCE_DIR}/src/centroider.cpp
+                        ${CMAKE_SOURCE_DIR}/src/star_filter.cpp
+                        ${CMAKE_SOURCE_DIR}/src/star_filter_sw.cpp
+                        ${CMAKE_SOURCE_DIR}/src/star_filter_hw.cpp)
+
+install(DIRECTORY ${CMAKE_SOURCE_DIR}/include/ DESTINATION include)
+install(TARGETS cest DESTINATION lib)
