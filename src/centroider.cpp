@@ -37,7 +37,7 @@
 #include <cest/csv.hpp>
 
 using namespace std;
-using namespace st;
+using namespace cest;
 using namespace cv;
 
 Centroider::Centroider()

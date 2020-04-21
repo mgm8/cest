@@ -33,7 +33,7 @@
 
 #include <cest/cdpu.h>
 
-using namespace st;
+using namespace cest;
 
 CDPU::CDPU()
 {

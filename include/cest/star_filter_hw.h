@@ -69,7 +69,7 @@ class StarFilterHW: public StarFilter
          *
          * \return A list of star pixels.
          */
-        std::vector<st::StarPixel> ReadStarPixelsFromFile(const char *file);
+        std::vector<cest::StarPixel> ReadStarPixelsFromFile(const char *file);
 
     public:
 
@@ -110,7 +110,7 @@ class StarFilterHW: public StarFilter
          *
          * \return A set of star pixels.
          */
-        std::vector<st::StarPixel> GetStarPixels(cv::Mat img);
+        std::vector<cest::StarPixel> GetStarPixels(cv::Mat img);
 
         /**
          * \brief Gets star pixels from a given image with a custom threshold value.
@@ -119,7 +119,7 @@ class StarFilterHW: public StarFilter
          *
          * \return
          */
-        std::vector<st::StarPixel> GetStarPixels(cv::Mat img, uint8_t thr);
+        std::vector<cest::StarPixel> GetStarPixels(cv::Mat img, uint8_t thr);
 
         /**
          * \brief Sets the threshold value of the threshold filter.

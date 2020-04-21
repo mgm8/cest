@@ -54,7 +54,7 @@ class CDPU
         /**
          * \brief Calculated centroid.
          */
-        st::Centroid centroid;
+        cest::Centroid centroid;
 
         /**
          * \brief Number of pixel of the centroid.
@@ -110,7 +110,7 @@ class CDPU
          *
          * \return The final centroid.
          */
-        st::Centroid GetCentroid();
+        cest::Centroid GetCentroid();
 
         /**
          * \brief Calculates the distance from the centroid to a given point.

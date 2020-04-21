@@ -40,7 +40,7 @@
 
 using namespace std;
 using namespace cv;
-using namespace st;
+using namespace cest;
 
 StarFilterHW::StarFilterHW()
     : StarFilter()

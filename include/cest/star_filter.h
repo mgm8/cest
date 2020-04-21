@@ -93,7 +93,7 @@ class StarFilter
          *
          * \return A set of star pixels.
          */
-        virtual std::vector<st::StarPixel> GetStarPixels(cv::Mat img);
+        virtual std::vector<cest::StarPixel> GetStarPixels(cv::Mat img);
 };
 
 #endif // STAR_FILTER_H_

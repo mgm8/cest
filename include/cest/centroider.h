@@ -118,21 +118,21 @@ class Centroider
          *
          * \return None.
          */
-        void Compute(st::StarPixel star_pix, float gain=CENTROIDER_CDPU_DEFAULT_KALMAN_GAIN);
+        void Compute(cest::StarPixel star_pix, float gain=CENTROIDER_CDPU_DEFAULT_KALMAN_GAIN);
 
         /**
          * \brief Computes the centroids from a list of star pixels.
          *
          * \return A vector with all the computed centroids.
          */
-        std::vector<st::Centroid> ComputeFromList(std::vector<st::StarPixel> stars, float gain=CENTROIDER_CDPU_DEFAULT_KALMAN_GAIN);
+        std::vector<cest::Centroid> ComputeFromList(std::vector<cest::StarPixel> stars, float gain=CENTROIDER_CDPU_DEFAULT_KALMAN_GAIN);
 
         /**
          * \brief Gets the last computed centroids.
          *
          * \return A vector with all the last computed centroids.
          */
-        std::vector<st::Centroid> GetCentroids();
+        std::vector<cest::Centroid> GetCentroids();
 
         /**
          * \brief Sorts a vector with centroids by their brightness.
@@ -141,7 +141,7 @@ class Centroider
          *
          * \return A vector with centroids ordered by their brightness.
          */
-        std::vector<st::Centroid> SortCentroids(std::vector<st::Centroid> centroids);
+        std::vector<cest::Centroid> SortCentroids(std::vector<cest::Centroid> centroids);
 
         /**
          * \brief Resets the CDPUs.
@@ -159,7 +159,7 @@ class Centroider
          *
          * \return The result image.
          */
-        cv::Mat PrintCentroids(cv::Mat img, std::vector<st::Centroid> centroids, bool print_id=false);
+        cv::Mat PrintCentroids(cv::Mat img, std::vector<cest::Centroid> centroids, bool print_id=false);
 
         /**
          * \brief Save the detected centroids in a CSV file.

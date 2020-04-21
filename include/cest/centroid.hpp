@@ -35,9 +35,9 @@
 #define CENTROID_HPP_
 
 /**
- * \brief Star tracker namespace.
+ * \brief CEST namespace.
  */
-namespace st
+namespace cest
 {
     /**
      * \brief Centroid structure.

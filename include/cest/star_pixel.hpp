@@ -35,9 +35,9 @@
 #define STAR_PIXEL_HPP_
 
 /**
- * \brief Star tracker namespace.
+ * \brief CEST namespace.
  */
-namespace st
+namespace cest
 {
     /**
      * \brief Star pixel structure.
@@ -102,4 +102,4 @@ namespace st
 
 #endif // STAR_PIXEL_HPP_
 
-    //! \} End of star-pixel group
+//! \} End of star-pixel group
