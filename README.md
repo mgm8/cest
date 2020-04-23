@@ -1,6 +1,6 @@
 # CEST - Centroid Extractor for Star Trackers
 
-![alt text][doc/stars-image.png "Stars image"] ![alt text][doc/stars-image-centroids.png "Stars centroids"]
+![Star image](doc/stars-image.png) ![Star centroids](doc/stars-image-centroids.png)
 
 ## Dependencies
 
