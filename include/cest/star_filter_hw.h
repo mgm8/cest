@@ -39,7 +39,7 @@
 
 #include "star_filter.h"
 
-#define STAR_FILTER_HW_VHDL_FILES_DIR           "vhdl"
+#define STAR_FILTER_HW_VHDL_FILES_DIR           "/usr/local/share/cest"
 
 #define STAR_FILTER_HW_BUFFER_IMG               "/tmp/img_buf.pgm"
 #define STAR_FILTER_HW_BUFFER_STAR_PIXELS       "/tmp/star_pixels.csv"

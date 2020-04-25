@@ -20,4 +20,5 @@ add_library(cest STATIC ${CMAKE_SOURCE_DIR}/src/cdpu.cpp
                         ${CMAKE_SOURCE_DIR}/src/star_filter_hw.cpp)
 
 install(DIRECTORY ${CMAKE_SOURCE_DIR}/include/ DESTINATION include)
+install(DIRECTORY ${CMAKE_SOURCE_DIR}/vhdl/ DESTINATION share)
 install(TARGETS cest DESTINATION lib)

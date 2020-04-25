@@ -9,10 +9,11 @@ ifndef THRESHOLD
 	THRESHOLD = 150
 endif
 
+GHDL=ghdl-mcode
 FLAGS = --stop-time=$(STOP_TIME) -gSTAR_THRESHOLD_VAL=$(THRESHOLD)
 
 all:
-	ghdl-mcode -c $(VHDL_FILES) -r $(ENTITY) $(FLAGS)
+	$(GHDL) -c $(VHDL_FILES) -r $(ENTITY) $(FLAGS)
 
 wave:
-	ghdl-mcode -c $(VHDL_FILES) -r $(ENTITY) $(FLAGS) --vcd=sim.vcd
+	$(GHDL) -c $(VHDL_FILES) -r $(ENTITY) $(FLAGS) --vcd=sim.vcd
