@@ -2,13 +2,13 @@
 #include <vector>
 #include <opencv2/opencv.hpp>
 
-#include "star_pixel.hpp"
-#include "centroid.hpp"
+#include <cest/star_pixel.hpp>
+#include <cest/centroid.hpp>
 
-#include "star_filter.h"
-#include "star_filter_sw.h"
-#include "star_filter_hw.h"
-#include "centroider.h"
+#include <cest/star_filter.h>
+#include <cest/star_filter_sw.h>
+#include <cest/star_filter_hw.h>
+#include <cest/centroider.h>
 
 #define STAR_THRESHOLD_VALUE            150
 #define KALMAN_GAIN_WEIGHT              0.8
@@ -16,7 +16,7 @@
 
 using namespace std;
 using namespace cv;
-using namespace st;
+using namespace cest;
 
 void RunSim(Mat img, StarFilter *star_filter, Centroider *centroider, const char *label)
 {
@@ -39,7 +39,7 @@ int main(int argc, char **argv)
         return -1;
     }
 
-    Mat img = imread(argv[1], CV_LOAD_IMAGE_GRAYSCALE);
+    Mat img = imread(argv[1], IMREAD_GRAYSCALE);
 
     cout << "Running software implementation..." << endl;
     RunSim(img, new StarFilterSW(STAR_THRESHOLD_VALUE), new Centroider(MAX_NUMBER_OF_CENTROIDS), "SW Simulation Result");
