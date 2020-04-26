@@ -1,17 +1,46 @@
+/*
+ * main.h
+ * 
+ * Copyright (C) 2020, Gabriel Mariano Marcelino <gabriel.mm8@gmail.comk>
+ * 
+ * This file is part of CEST library.
+ * 
+ * CEST library is free software: you can redistribute it
+ * and/or modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ * 
+ * CEST library is distributed in the hope that it will be
+ * useful, but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with CEST library. If not, see <http://www.gnu.org/licenses/>.
+ * 
+ */
+
+/**
+ * \brief CEST example.
+ * 
+ * \author Gabriel Mariano Marcelino <gabriel.mm8@gmail.com>
+ * 
+ * \version 0.1.0
+ * 
+ * \date 25/04/2020
+ * 
+ * \defgroup example Example
+ * \ingroup cest
+ * \{
+ */
+
 #include <iostream>
 #include <vector>
 #include <opencv2/opencv.hpp>
-
-#include <cest/star_pixel.hpp>
-#include <cest/centroid.hpp>
-
-#include <cest/star_filter.h>
-#include <cest/star_filter_sw.h>
-#include <cest/star_filter_hw.h>
-#include <cest/centroider.h>
+#include <cest/cest.h>
 
 #define STAR_THRESHOLD_VALUE            150
-#define KALMAN_GAIN_WEIGHT              0.8
+#define GAIN_WEIGHT                     0.8
 #define MAX_NUMBER_OF_CENTROIDS         60
 
 using namespace std;
@@ -22,7 +51,7 @@ void RunSim(Mat img, StarFilter *star_filter, Centroider *centroider, const char
 {
     vector<StarPixel> star_pixels = star_filter->GetStarPixels(img);
 
-    vector<Centroid> centroids = centroider->ComputeFromList(star_pixels, KALMAN_GAIN_WEIGHT);
+    vector<Centroid> centroids = centroider->ComputeFromList(star_pixels, GAIN_WEIGHT);
 
     centroider->SaveCentroids("centroids.csv");
 
@@ -49,3 +78,5 @@ int main(int argc, char **argv)
 
     return 0;
 }
+
+//! \} End of example group
