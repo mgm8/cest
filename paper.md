@@ -87,6 +87,21 @@ To illustrate this process, we have matrix (??), which represents a hypothetical
     \caption{Detected centroids in an image (left: sky image, right: detected centroids).}
 \end{figure}
 
+The proposed algorithm is also demonstrated in Figure (xx).
+
+\begin{figure}[!htb]
+    \begin{center}
+        \subfigure[Pixel sliding window (red square).\label{fig:alg-demo-step-1}]{\includegraphics[width=0.2\textwidth]{figures/alg-ex-step-1}}
+        \subfigure[First pixel to pass in the threshold filter. Distance threshold region (dashed circle).\label{fig:alg-demo-step-2}]{\includegraphics[width=0.2\textwidth]{figures/alg-ex-step-2}}
+        \subfigure[Second pixel of the star.\label{fig:alg-demo-step-3}]{\includegraphics[width=0.2\textwidth]{figures/alg-ex-step-3}}
+        \subfigure[Third pixel of the star.\label{fig:alg-demo-step-4}]{\includegraphics[width=0.2\textwidth]{figures/alg-ex-step-4}}
+        \subfigure[Fourth pixel of the star.\label{fig:alg-demo-step-5}]{\includegraphics[width=0.2\textwidth]{figures/alg-ex-step-5}}
+        \subfigure[Final result with the estimated centroid (green circle).\label{fig:alg-demo-step-6}]{\includegraphics[width=0.2\textwidth]{figures/alg-ex-step-6}}
+        \caption{Proposed algorithm demonstration. Pixels coordinates (black dots). Star pixels with brightness variation at the borders (grey and white squares). Real centroid of the star (green cross). Estimated centroid (green circle).}
+        \label{fig:algorithm-demo}
+    \end{center}
+\end{figure}
+
 # Conclusion
 
 # References
