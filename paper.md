@@ -104,4 +104,8 @@ The proposed algorithm is also demonstrated in Figure (xx).
 
 # Conclusion
 
+With this work, it was possible to develop a more efficient algorithm for the extraction of centroids in star trackers. By implementeing CEST using dedicated hardware, we reduced the complexity of the processing steps of the captured images. Besides the initial objective of facilitating the use of this type of sensor in nanosatellites, making the hardware architecture more straightforward, it was also possible to reduce the runtime of the reading cycles and to obtain a subpixel-level precision.
+
+Another aspect of prominence was the testing environment built to validate the entire sensor. This platform will allow running more comprehensive tests and can be used in the integration phase of a future flight version, or even to test other star tracker models.
+
 # References
