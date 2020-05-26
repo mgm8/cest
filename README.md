@@ -1,7 +1,5 @@
 # CEST - Centroid Extractor for Star Trackers
 
-<img align="left" width="440" height="330" src="https://raw.githubusercontent.com/mgm8/cest/master/doc/stars-image.png"> <img align="right" width="440" height="330" src="https://raw.githubusercontent.com/mgm8/cest/master/doc/stars-image-centroids.png">
-
 ## Dependencies
 
 To compile the library, the following dependencies are required:
@@ -38,6 +36,13 @@ To run the simulation, an image must be passed as argument:
 ```
 
 > NOTE: For now, the image resolution must be 800x600.
+
+## Example
+
+<img align="left" width="440" height="330" src="https://raw.githubusercontent.com/mgm8/cest/master/doc/stars-image.png">
+
+<img align="right" width="440" height="330" src="https://raw.githubusercontent.com/mgm8/cest/master/doc/stars-image-centroids.png">
+
 
 ## License
 
