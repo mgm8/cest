@@ -9,22 +9,19 @@ tags:
 authors:
   - name: Gabriel Mariano Marcelino
     orcid: 0000-0003-4889-6021
-    affiliation: "1"
+    affiliation: 1
   - name: Victor Hugo Schulz
-    orcid: 0000-0003-4889-6021
-    affiliation: "2"
-  - Laio Oriel Seman
-    orcid: 0000-0003-4889-6021
-    affiliation: "3"
-  - Eduardo Augusto Bezerra
-    orcid: 0000-0003-4889-6021
-    affiliation: "1"
+    affiliation: 2
+  - name: Laio Oriel Seman
+    affiliation: 3
+  - name: Eduardo Augusto Bezerra
+    affiliation: 1
 affiliations:
  - name: Space Technology Research Laboratory (SpaceLab), Universidade Federal de Santa Catarina
    index: 1
  - name: Laboratory of Spacecraft Environment Interaction Engineering (LaSEINE), Kyushu Institute of Technology
    index: 2
- - name: Applied Computer Science Master Program, Itajaí Valley University (UNIVALI)
+ - name: Gradute Program in Applied Computer Science, Itajaí Valley University (UNIVALI)
    index: 3
 date: 19 April 2020
 bibliography: paper.bib
