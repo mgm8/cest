@@ -45,4 +45,4 @@ To run the simulation, an image must be passed as argument:
 
 ## License
 
-This software is licensed under GPL license, version 3.
+This software is licensed under LGPL license, version 3.
