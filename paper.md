@@ -68,7 +68,7 @@ where:
 * $Y_{n}$ is the estimation in the current iteration;
 * $Y_{n−1}$ is the estimation of the previous iteration.
 
-To illustrate this process, we have matrix (\ref{eq:ex-single-star-matrix}), which represents a hypothetical image with a single star. Upon applying the previous equations to this matrix, after it goes through the threshold filter with a threshold equal to 150, we arrive at the results of Figure 1. In this example, the system origin is the upper left corner, and the reading direction is from left to right, and from top to bottom.
+To illustrate this process, we have matrix (\ref{eq:ex-single-star-matrix}), which represents a hypothetical image with a single star. Upon applying the previous equations to this matrix, after it goes through the threshold filter with a threshold equal to 150, we arrive at the results of Figure \ref{fig:result-demo}. In this example, the system origin is the upper left corner, and the reading direction is from left to right, and from top to bottom.
 
 \begin{equation}
     S =
@@ -86,11 +86,11 @@ To illustrate this process, we have matrix (\ref{eq:ex-single-star-matrix}), whi
     \label{eq:ex-single-star-matrix}
 \end{equation}
 
-![Detected centroids in an image (left: sky image, right: detected centroids).](doc/result-demo.png)
+![Detected centroids in an image (left: sky image, right: detected centroids).\label{fig:result-demo}](doc/result-demo.png)
 
-The proposed algorithm is also demonstrated in Figure 2.
+The proposed algorithm is also demonstrated in Figure \ref{fig:algorithm-demo}.
 
-![Proposed algorithm demonstration. Pixels coordinates (black dots). Star pixels with brightness variation at the borders (grey and white squares). Real centroid of the star (green cross). Estimated centroid (green circle).](doc/algorithm-demo.png)
+![Proposed algorithm demonstration. Pixels coordinates (black dots). Star pixels with brightness variation at the borders (grey and white squares). Real centroid of the star (green cross). Estimated centroid (green circle).\label{fig:algorithm-demo}](doc/algorithm-demo.png)
 
 # Conclusion
 
