@@ -1,5 +1,9 @@
 # CEST - Centroid Extractor for Star Trackers
 
+## Summary
+
+CEST (Centroid Extractor for Star Trackers) is an algorithm for identifying and determining the stars centroid in an image without storing the entire captured image and without the need for external memories or buffer. By implementeing CEST using dedicated hardware, it is possible to reduced the complexity of the processing steps of the captured images.
+
 ## Dependencies
 
 To compile the library, the following dependencies are required:
