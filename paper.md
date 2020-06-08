@@ -68,7 +68,7 @@ where:
 * $Y_{n}$ is the estimation in the current iteration;
 * $Y_{n−1}$ is the estimation of the previous iteration.
 
-To illustrate this process, we have matrix (??), which represents a hypothetical image with a single star. Upon applying the previous equations to this matrix, after it goes through the threshold filter with a threshold equal to 150, we arrive at the results of Figure 1. In this example, the system origin is the upper left corner, and the reading direction is from left to right, and from top to bottom.
+To illustrate this process, we have matrix (\ref{eq:ex-single-star-matrix}), which represents a hypothetical image with a single star. Upon applying the previous equations to this matrix, after it goes through the threshold filter with a threshold equal to 150, we arrive at the results of Figure 1. In this example, the system origin is the upper left corner, and the reading direction is from left to right, and from top to bottom.
 
 \begin{equation}
     S =
