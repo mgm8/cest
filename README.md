@@ -39,10 +39,9 @@ To run the simulation, an image must be passed as argument:
 
 ## Example
 
-<img align="left" width="440" height="330" src="https://raw.githubusercontent.com/mgm8/cest/master/doc/stars-image.png">
-
-<img align="right" width="440" height="330" src="https://raw.githubusercontent.com/mgm8/cest/master/doc/stars-image-centroids.png">
-
+<p align="center">
+<img src="https://raw.githubusercontent.com/mgm8/cest/master/doc/result-demo.png">
+</p>
 
 ## License
 
