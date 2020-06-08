@@ -72,32 +72,13 @@ where:
 * $Y_{n}$ is the estimation in the current iteration;
 * $Y_{n−1}$ is the estimation of the previous iteration.
 
-To illustrate this process, we have matrix (??), which represents a hypothetical image with a single star. Upon applying the previous equations to this matrix, after it goes through the threshold filter with a threshold equal to 150, we arrive at the results of ??. In this example, the system origin is the upper left corner, and the reading direction is from left to right, and from top to bottom.
+To illustrate this process, we have matrix (??), which represents a hypothetical image with a single star. Upon applying the previous equations to this matrix, after it goes through the threshold filter with a threshold equal to 150, we arrive at the results of Figure 1. In this example, the system origin is the upper left corner, and the reading direction is from left to right, and from top to bottom.
 
-\begin{figure}[!htb]
-    \minipage{0.48\textwidth}
-        \includegraphics[width=\linewidth]{doc/stars-image.png}
-    \endminipage\hfill
-    \minipage{0.48\textwidth}
-        \includegraphics[width=\linewidth]{doc/stars-image-centroids.png}
-    \endminipage\hfill
-    \caption{Detected centroids in an image (left: sky image, right: detected centroids).}
-\end{figure}
+![Detected centroids in an image (left: sky image, right: detected centroids).](doc/result-demo.png)
 
-The proposed algorithm is also demonstrated in Figure (xx).
+The proposed algorithm is also demonstrated in Figure 2.
 
-\begin{figure}[!htb]
-    \begin{center}
-        \subfigure[Pixel sliding window (red square).\label{fig:alg-demo-step-1}]{\includegraphics[width=0.2\textwidth]{figures/alg-ex-step-1}}
-        \subfigure[First pixel to pass in the threshold filter. Distance threshold region (dashed circle).\label{fig:alg-demo-step-2}]{\includegraphics[width=0.2\textwidth]{figures/alg-ex-step-2}}
-        \subfigure[Second pixel of the star.\label{fig:alg-demo-step-3}]{\includegraphics[width=0.2\textwidth]{figures/alg-ex-step-3}}
-        \subfigure[Third pixel of the star.\label{fig:alg-demo-step-4}]{\includegraphics[width=0.2\textwidth]{figures/alg-ex-step-4}}
-        \subfigure[Fourth pixel of the star.\label{fig:alg-demo-step-5}]{\includegraphics[width=0.2\textwidth]{figures/alg-ex-step-5}}
-        \subfigure[Final result with the estimated centroid (green circle).\label{fig:alg-demo-step-6}]{\includegraphics[width=0.2\textwidth]{figures/alg-ex-step-6}}
-        \caption{Proposed algorithm demonstration. Pixels coordinates (black dots). Star pixels with brightness variation at the borders (grey and white squares). Real centroid of the star (green cross). Estimated centroid (green circle).}
-        \label{fig:algorithm-demo}
-    \end{center}
-\end{figure}
+![Proposed algorithm demonstration. Pixels coordinates (black dots). Star pixels with brightness variation at the borders (grey and white squares). Real centroid of the star (green cross). Estimated centroid (green circle).](doc/algorithm-demo.png)
 
 # Conclusion
 
