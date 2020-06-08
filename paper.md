@@ -70,6 +70,22 @@ where:
 
 To illustrate this process, we have matrix (??), which represents a hypothetical image with a single star. Upon applying the previous equations to this matrix, after it goes through the threshold filter with a threshold equal to 150, we arrive at the results of Figure 1. In this example, the system origin is the upper left corner, and the reading direction is from left to right, and from top to bottom.
 
+\begin{equation}
+    S =
+    \begin{bmatrix}
+        0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 \\
+        0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 \\
+        0 &   0 &   0 &   0 & 200 &   0 &   0 &   0 &   0 \\
+        0 &   0 &   0 & 220 & 240 & 220 &   0 &   0 &   0 \\
+        0 &   0 & 200 & 240 & 240 & 240 & 220 &   0 &   0 \\
+        0 &   0 &   0 & 220 & 240 & 220 &   0 &   0 &   0 \\
+        0 &   0 &   0 &   0 & 200 &   0 &   0 &   0 &   0 \\
+        0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 \\
+        0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 &   0 \\
+    \end{bmatrix}
+    \label{eq:ex-single-star-matrix}
+\end{equation}
+
 ![Detected centroids in an image (left: sky image, right: detected centroids).](doc/result-demo.png)
 
 The proposed algorithm is also demonstrated in Figure 2.
