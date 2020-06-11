@@ -29,13 +29,17 @@ bibliography: paper.bib
 
 # Summary
 
-The number of nanosatellites and picosatellites being launched have increased over the years. Associated with this growth, these smaller satellites have incrementally being able to replace functions previously only performed by bigger satellites, by the means of miniaturisation of their components. The reduced physical volume also implies in smaller solar panels and batteries being employed, resulting in stricter energy constraints for the satellite subsystems. These constraints have brought a demand for technology development toward optimising size, mass and energy consumption of CubeSat components.
+The number of nanosatellites and picosatellites being launched have increased over the years. Associated with this growth, these smaller satellites have incrementally being able to replace functions previously only performed by bigger satellites, by the means of miniaturization of their components. The reduced physical volume also implies in smaller solar panels and batteries being employed, resulting in stricter energy constraints for the satellite subsystems. These constraints have brought a demand for technology development toward optimizing size, mass and energy consumption of CubeSat components.
 
 At the beginning of space exploration, due to limitations in the available technologies, positioning and navigation systems were little efficient. For example, the first star trackers used to have film cameras through an almost entirely analog process [@zhang2017]. With the advance of electronics and the exponential growth of embedded devices processing capacity, the use of these types of sensors and system has becoming each time more accessible.
 
 The use of star trackers began to be more widespread with the emergence of the first public star catalogs in the 1990s, such as, for example, the Hipparcos [@hipparcos-catalog]. Despite the advent of the CubeSat standard in 1999 [@cds], the use of such sensors in small-sized satellites only started to be explored by the end of the 2000s, possibly due to the technological limitations (required physical size and power consumption) and lack of commercial solutions [@mcbryde-thesis].
 
-In this context, CEST (Centroid Extractor for Star Trackers) is an algorithm for identifying and determining the stars centroid in an image without storing the entire captured image and without the need for external memories or buffer [@marcelino2020].
+The centroid extraction or determination, is the first step of the processing chain of a star tracker sensor. After finding the centroids of the stars, there are at least two more steps: star identification (using a catalog) and the attitude determination. These two last steps are covered by this library.
+
+In this context, CEST (Centroid Extractor for Star Trackers) is a library for identifying and determining the stars centroids in an image, by processing a stream of pixels without storing the entire captured image and without the need for large memory buffers (in an embedded context).
+
+This work presents a library that implements the developed algorithm in [@marcelino2020]. The library is divided in two parts: A threshold filter, to detect all star pixels, and the centroid determination. There are two different implementations for the threshold filter: a software and a hardware implementation (using hardware description and simulation).
 
 # Centroid Determination
 
@@ -86,7 +90,9 @@ To illustrate this process, we have matrix (\ref{eq:ex-single-star-matrix}), whi
     \label{eq:ex-single-star-matrix}
 \end{equation}
 
-![Detected centroids in an image (left: sky image, right: detected centroids).\label{fig:result-demo}](doc/result-demo.png)
+![Example of a starry sky image.\label{fig:image-example}](doc/stars-image.png)
+
+![Detected centroids in Figure \ref{fig:image-example}.\label{fig:example-result}](doc/stars-image-centroids.png)
 
 The proposed algorithm is also demonstrated in Figure \ref{fig:algorithm-demo}.
 
