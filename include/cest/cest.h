@@ -36,6 +36,8 @@
 #ifndef CEST_H_
 #define CEST_H_
 
+#define CEST_VERSION    "0.1.0"
+
 #include "centroid.hpp"
 #include "centroider.h"
 #include "star_filter.h"
