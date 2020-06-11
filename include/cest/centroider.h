@@ -47,7 +47,7 @@
 #define CENTROIDER_DEFAULT_MAX_CDPUS                20
 #define CENTROIDER_DEFAULT_DISTANCE_THRESHOLD       10
 
-#define CENTROIDER_CDPU_DEFAULT_KALMAN_GAIN         0.8
+#define CENTROIDER_CDPU_DEFAULT_CORRECTION_FACTOR   0.8
 
 /**
  * \brief Centroider class.
@@ -101,34 +101,40 @@ class Centroider
          *
          * \param[in] n is the new number of CDPUs.
          *
-         * \return Non.
+         * \return None.
          */
         void SetNumberOfCDPUs(unsigned int n);
 
         /**
-         * \brief Sets the distance threshold between two pixel to become a star.
+         * \brief Sets the Manhattan distance threshold between two pixels to become a star.
          *
-         * \param[in] d
+         * \param[in] d is the new distance threshold value.
          *
          * \return None.
          */
         void SetDistanceThreshold(unsigned int d);
 
         /**
-         * \brief .
+         * \brief Computes a new star pixel.
          *
-         * \param[in] star_pix
+         * \param[in] star_pix is the star pixel to compute.
+         *
+         * \param[in] a is an optimal constant to minimize the centroid position error.
          *
          * \return None.
          */
-        void Compute(cest::StarPixel star_pix, float gain=CENTROIDER_CDPU_DEFAULT_KALMAN_GAIN);
+        void Compute(cest::StarPixel star_pix, float a=CENTROIDER_CDPU_DEFAULT_CORRECTION_FACTOR);
 
         /**
          * \brief Computes the centroids from a list of star pixels.
          *
+         * \param[in] stars is a list of star pixels to compute the centroids.
+         *
+         * \param[in] a is an optimal constant to minimize the centroid position error.
+         *
          * \return A vector with all the computed centroids.
          */
-        std::vector<cest::Centroid> ComputeFromList(std::vector<cest::StarPixel> stars, float gain=CENTROIDER_CDPU_DEFAULT_KALMAN_GAIN);
+        std::vector<cest::Centroid> ComputeFromList(std::vector<cest::StarPixel> stars, float a=CENTROIDER_CDPU_DEFAULT_CORRECTION_FACTOR);
 
         /**
          * \brief Gets the last computed centroids.

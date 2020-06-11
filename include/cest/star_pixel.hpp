@@ -48,6 +48,7 @@ namespace cest
     class StarPixel
     {
         public:
+
             /**
              * \brief Class constructor.
              *

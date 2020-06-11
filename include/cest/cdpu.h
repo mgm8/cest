@@ -42,10 +42,20 @@
 
 #include "centroid.hpp"
 
+/**
+ * \brief Pixel distance threshold value (Euclidean distance).
+ */
 #define DISTANCE_THRESHOLD                  5
+
+/**
+ * \brief Pixel distance threshold value (Manhattan distance).
+ */
 #define DISTANCE_THRESHOLD_MAN              (2*sqrt(pow(DISTANCE_THRESHOLD, 2))/sqrt(2))
 
-#define CDPU_DEFAULT_KALMAN_GAIN_FACTOR     0.78
+/**
+ * \brief Default value of the optimal constant to minimize the centroid position error.
+ */
+#define CDPU_DEFAULT_CORRECTION_FACTOR      0.8
 
 /**
  * \brief Class to implement a CentroiD Processor Unit.
@@ -65,9 +75,9 @@ class CDPU
         unsigned int pixels;
 
         /**
-         * \brief Kalman filter gain.
+         * \brief Pixel weight.
          */
-        float K;
+        float G;
 
     public:
 
@@ -86,19 +96,19 @@ class CDPU
         ~CDPU();
 
         /**
-         * \brief Updates the centroid parameters.
+         * \brief Updates the centroid estimation.
          *
          * \param[in] x_new is the x position of the new pixel of a star.
          *
          * \param[in] y_new is the y position of the new pixel of a star.
          *
-         * \param[in] color_new is the color of the new pixel of a star.
+         * \param[in] color_new is the color value of the new pixel of a star.
          *
-         * \param[in] gain is the Kalman Filter gain factor.
+         * \param[in] a is an optimal constant to minimize the centroid position error.
          *
          * \return None.
          */
-        void Update(unsigned int x_new, unsigned int y_new, uint8_t color_new, float gain=CDPU_DEFAULT_KALMAN_GAIN_FACTOR);
+        void Update(unsigned int x_new, unsigned int y_new, uint8_t color_new, float a=CDPU_DEFAULT_CORRECTION_FACTOR);
 
         /**
          * \brief Sets the values of the centroid.
@@ -116,12 +126,12 @@ class CDPU
         /**
          * \brief Gets the final calculated centroid of a star.
          *
-         * \return The final centroid.
+         * \return The estimated centroid of the given star.
          */
         cest::Centroid GetCentroid();
 
         /**
-         * \brief Calculates the distance from the centroid to a given point.
+         * \brief Calculates the Manhattan distance from the current centroid estimation to a given point.
          *
          * \param[in] x_comp is the x-axis position of a point.
          *

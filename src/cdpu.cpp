@@ -44,7 +44,7 @@ CDPU::CDPU()
     this->centroid.value    = 0;
     this->centroid.pixels   = 0;
     this->pixels            = 0;
-    this->K                 = 1;
+    this->G                 = 1;
 }
 
 CDPU::~CDPU()
@@ -52,16 +52,18 @@ CDPU::~CDPU()
 
 }
 
-void CDPU::Update(unsigned int x_new, unsigned int y_new, uint8_t color_new, float gain)
+void CDPU::Update(unsigned int x_new, unsigned int y_new, uint8_t color_new, float a)
 {
     if (this->DistanceFrom(x_new, y_new) < DISTANCE_THRESHOLD_MAN)
     {
-        this->K *= gain;
-        this->centroid.value = (this->K*this->centroid.value) + ((1-this->K)*color_new);
-        this->centroid.x = (this->K*this->centroid.x) + ((1-this->K)*x_new);
-        this->centroid.y = (this->K*this->centroid.y) + ((1-this->K)*y_new);
+        this->G *= a;
+        this->centroid.x = (this->G*this->centroid.x) + ((1-this->G)*x_new);
+        this->centroid.y = (this->G*this->centroid.y) + ((1-this->G)*y_new);
+
+        this->centroid.value = (this->G*this->centroid.value) + ((1-this->G)*color_new);
         this->centroid.pixels++;
 
+        // Pixel counter
         this->pixels++;
     }
 }

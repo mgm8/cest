@@ -68,7 +68,7 @@ void Centroider::SetDistanceThreshold(unsigned int d)
     this->distance_threshold = d;
 }
 
-void Centroider::Compute(StarPixel star_pix, float gain)
+void Centroider::Compute(StarPixel star_pix, float a)
 {
     if (this->cdpus.size() < this->max_cdpus)
     {
@@ -90,17 +90,17 @@ void Centroider::Compute(StarPixel star_pix, float gain)
 
     for(unsigned int k=0; k<this->cdpus.size(); k++)
     {
-        this->cdpus[k].Update(star_pix.x, star_pix.y, star_pix.value, gain);
+        this->cdpus[k].Update(star_pix.x, star_pix.y, star_pix.value, a);
     }
 }
 
-vector<Centroid> Centroider::ComputeFromList(vector<StarPixel> stars, float gain)
+vector<Centroid> Centroider::ComputeFromList(vector<StarPixel> stars, float a)
 {
     this->Reset();
 
     for(unsigned int i=0; i<stars.size(); i++)
     {
-        this->Compute(stars[i], gain);
+        this->Compute(stars[i], a);
     }
 
     return this->GetCentroids();

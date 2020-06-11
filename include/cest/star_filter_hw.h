@@ -84,9 +84,9 @@ class StarFilterHW: public StarFilter
         StarFilterHW();
 
         /**
-         * \brief Class constructor (overload).
+         * \brief Class constructor (overloaded).
          *
-         * \param[in] thr is the threshold value.
+         * \param[in] thr is the pixel threshold value.
          *
          * \return None.
          */
@@ -120,7 +120,7 @@ class StarFilterHW: public StarFilter
          *
          * \param[in] img is the image to search for the star pixels.
          *
-         * \return
+         * \return A vector with the star pixels of the given image .
          */
         std::vector<cest::StarPixel> GetStarPixels(cv::Mat img, uint8_t thr);
 
