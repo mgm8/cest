@@ -82,7 +82,7 @@ where:
 * $Y_{n}$ is the estimation in the current iteration;
 * $Y_{n−1}$ is the estimation of the previous iteration.
 
-To illustrate this process, we have matrix (\ref{eq:ex-single-star-matrix}), which represents a hypothetical image with a single star. Upon applying the previous equations to this matrix, after it goes through the threshold filter with a threshold equal to 150, we arrive at the results of Figure \ref{fig:result-demo}. In this example, the system origin is the upper left corner, and the reading direction is from left to right, and from top to bottom.
+To illustrate this process, we have matrix (\ref{eq:ex-single-star-matrix}), which represents a hypothetical image with a single star. Upon applying the previous equations to this matrix, after it goes through the threshold filter with a threshold equal to 150, we arrive at the results of Figure \ref{fig:prediction-demo}. In this example, the system origin is the upper left corner, and the reading direction is from left to right, and from top to bottom.
 
 \begin{equation}
     S =
@@ -100,9 +100,13 @@ To illustrate this process, we have matrix (\ref{eq:ex-single-star-matrix}), whi
     \label{eq:ex-single-star-matrix}
 \end{equation}
 
-The proposed algorithm is also demonstrated in Figure \ref{fig:algorithm-demo}.
+![Prediction iterations when the algorithm is applied to the matrix (\ref{eq:ex-single-star-matrix}).\label{fig:prediction-demo}](doc/prediction-demo.png)
+
+The example of matrix (\ref{eq:ex-single-star-matrix}) is also graphically demonstrated in Figure \ref{fig:algorithm-demo}. In this figure, it is possible to see the centroid estimation interactively through a pixel stream, represented by a $1 \times 1$ sliding window (red square).
 
 ![Proposed algorithm demonstration. Pixels coordinates (black dots). Star pixels with brightness variation at the borders (grey and white squares). Real centroid of the star (green cross). Estimated centroid (green circle).\label{fig:algorithm-demo}](doc/algorithm-demo.png)
+
+Applying the available example program on the Figure \ref{fig:image-example}, the result of the Figure \ref{fig:example-result} is obtained.
 
 ![Example of a simulated starry sky image.\label{fig:image-example}](doc/stars-image.png)
 
@@ -111,7 +115,5 @@ The proposed algorithm is also demonstrated in Figure \ref{fig:algorithm-demo}.
 # Conclusion
 
 With this work, it was possible to develop a more efficient algorithm for the extraction of centroids in star trackers. By implementeing CEST using dedicated hardware, we reduced the complexity of the processing steps of the captured images. Besides the initial objective of facilitating the use of this type of sensor in nanosatellites, making the hardware architecture more straightforward, it was also possible to reduce the runtime of the reading cycles and to obtain a subpixel-level precision.
-
-Another aspect of prominence was the testing environment built to validate the entire sensor. This platform will allow running more comprehensive tests and can be used in the integration phase of a future flight version, or even to test other star tracker models.
 
 # References
