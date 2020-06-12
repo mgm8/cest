@@ -120,4 +120,9 @@ Implementing CEST by using dedicated hardware, it is also possible to reduce the
 
 By the knowledge of the authors, there is no open source library specifically developed to extract stars centroids so far.
 
+
+# Acknowledgement
+
+This study was financed in part by the Coordenação de Aperfeiçoamento de Pessoal de Nível Superior - Brasil (CAPES) - Finance Code 001.
+
 # References
