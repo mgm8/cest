@@ -114,6 +114,10 @@ Applying the available example program on the Figure \ref{fig:image-example}, th
 
 # Conclusion
 
-With this work, it was possible to develop a more efficient algorithm for the extraction of centroids in star trackers. By implementeing CEST using dedicated hardware, we reduced the complexity of the processing steps of the captured images. Besides the initial objective of facilitating the use of this type of sensor in nanosatellites, making the hardware architecture more straightforward, it was also possible to reduce the runtime of the reading cycles and to obtain a subpixel-level precision.
+With this work, it was possible to develop a library with a more efficient algorithm for the extraction of centroids in star trackers. CEST can be a handy tool to develop or evaluate star tracker sensors directly, or to develop new algorithms on other steps of the star tracker processing chain (in this case, without the trouble of develop a centroid extractor from scratch). It can also be useful in another applications with the need of detect dots in a blank image.
+
+Implementing CEST by using dedicated hardware, it is also possible to reduce the complexity of the processing steps of the captured images. Besides the initial objective of facilitating the use of this type of sensor in nanosatellites, making the hardware architecture more straightforward, it was also possible to reduce the runtime of the reading cycles and to obtain a subpixel-level precision.
+
+By the knowledge of the authors, there is no open source library specifically developed to extract stars centroids so far.
 
 # References
