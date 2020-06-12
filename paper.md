@@ -41,9 +41,19 @@ In this context, CEST (Centroid Extractor for Star Trackers) is a library for id
 
 This work presents a library that implements the developed algorithm in [@marcelino2020]. The library is divided in two parts: A threshold filter, to detect all star pixels, and the centroid determination. There are two different implementations for the threshold filter: a software and a hardware implementation (using hardware description and simulation).
 
-# Centroid Determination
+# Star Centroid Determination
 
-Considering that the input signal has a Gaussian behavior (pixels of stars), we propose the use of an IIR (infinite impulse response) filter to estimate the central coordinates of the centroids. For this purpose, it is possible to use a first-order filter (applied separately on each axis of the image) and with a gain that is constant and smaller than one, as presented in the following equations:
+The centroid determination algorithm implemented in this library is divided in two steps: threshold filter and centroid coordinates estimation. These steps are presented below.
+
+## Threshold Filter
+
+The first step of the implemented centroid determination method is the threshold filter. This filter has the purpose of find the star pixels and discard the background pixels of the image in analysis. Being the starry sky images relatively simple (a black image with white dots representing stars), it is possible to obtain the star pixels by applying a color threshold filter with a pre-determined threshold value.
+
+In this library, there are two implementations of this step. The first is a pure software implementation and the second is a hardware implementation. This hardware implementation is a VHDL (VHSIC Hardware Description Language) description that can be used in a real hardware between the camera interface and the microprocessor (using a CPDL, a FPGA or an ASIC device). Another possible usage of this hardware description is in a simulation environment. To simulate this hardware together with a simulated camera interface, a GHDL [@ghdl] simulation is also available. This simulation reads an image file and transmits its pixel through a CSI bus (Camera Serial Interface) to the star pixels filter step. After filtered, the star pixels are stored in a CSV file to be read by the next step of the processing chain.
+
+## Centroid Coordinates Estimation
+
+Considering the output of the threshold filter step as a signal with Gaussian behavior (pixels of stars), we propose the use of an IIR (infinite impulse response) filter to estimate the central coordinates of the centroids. For this purpose, it is possible to use a first-order filter (applied separately on each axis of the image) and with a gain that is constant and smaller than one, as presented in the following equations:
 
 \begin{subequations}
     \begin{align}
@@ -90,13 +100,13 @@ To illustrate this process, we have matrix (\ref{eq:ex-single-star-matrix}), whi
     \label{eq:ex-single-star-matrix}
 \end{equation}
 
-![Example of a starry sky image.\label{fig:image-example}](doc/stars-image.png)
-
-![Detected centroids in Figure \ref{fig:image-example}.\label{fig:example-result}](doc/stars-image-centroids.png)
-
 The proposed algorithm is also demonstrated in Figure \ref{fig:algorithm-demo}.
 
 ![Proposed algorithm demonstration. Pixels coordinates (black dots). Star pixels with brightness variation at the borders (grey and white squares). Real centroid of the star (green cross). Estimated centroid (green circle).\label{fig:algorithm-demo}](doc/algorithm-demo.png)
+
+![Example of a simulated starry sky image.\label{fig:image-example}](doc/stars-image.png)
+
+![Detected centroids in Figure \ref{fig:image-example}.\label{fig:example-result}](doc/stars-image-centroids.png)
 
 # Conclusion
 
