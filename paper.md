@@ -100,7 +100,7 @@ To illustrate this process, we have matrix (\ref{eq:ex-single-star-matrix}), whi
     \label{eq:ex-single-star-matrix}
 \end{equation}
 
-![Prediction iterations when the algorithm is applied to the matrix (\ref{eq:ex-single-star-matrix}).\label{fig:prediction-demo}](doc/prediction-demo.png)
+![Prediction iterations when the algorithm is applied to the matrix (\ref{eq:ex-single-star-matrix}).\label{fig:prediction-demo}](doc/prediction-demo.png){ width=100% }
 
 The example of matrix (\ref{eq:ex-single-star-matrix}) is also graphically demonstrated in Figure \ref{fig:algorithm-demo}. In this figure, it is possible to see the centroid estimation interactively through a pixel stream, represented by a $1 \times 1$ sliding window (red square).
 
